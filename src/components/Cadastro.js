@@ -1,6 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
-import styledComponents from "styled-components";
+import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { useNavigate } from "react-router-dom";
 

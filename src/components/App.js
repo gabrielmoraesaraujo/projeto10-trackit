@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import TokenContext from "../contexts/tokenContext";
-import Cadastro from ".components/Cadastro";
-import Login from ".components/Login";
-import Hoje from ".components/Hoje";
-import Historico from ".components/Historico";
-import Habitos from ".components/Habitos";
+import Cadastro from "./Cadastro";
+import Login from "./Login";
+import Hoje from "./Hoje";
+import Historico from "./Historico";
+import Habitos from "./Habitos";
 
 
 export default function App(){
