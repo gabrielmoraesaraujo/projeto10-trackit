@@ -374,5 +374,16 @@ const BtnCancelar = styled.div`
     justify-content: center;
 
     font-family: 'Lexend Deca';
-    font-
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.976px;
+    line-height: 20px;
+    text-align: center;
+    color: #52B6FF;
+`
+
+const Espaco = styled.div`
+
+    width: 100%;
+    height: 120px;
 `
