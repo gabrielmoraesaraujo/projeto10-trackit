@@ -78,7 +78,7 @@ const TelaCadastro = styled.div`
     align-items: center;
     input{
         width:85%;
-        height: 8%;
+        height: 45px;
         margin-top: 1%;
         margin-bottom: 1%;
         font-family: 'Lexend Deca';
