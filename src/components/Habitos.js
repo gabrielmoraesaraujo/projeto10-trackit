@@ -324,7 +324,7 @@ const NovoHabitoContainer = styled.div`
     border-radius: 5px;
     input{
         width: 100%;
-        height: 45px;
+        height: 20%;
         font-family: 'Lexend Deca';
         font-style: normal;
         font-weight: 400;
