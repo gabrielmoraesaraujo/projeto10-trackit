@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import TokenContext from "../contexts/tokenContext";
+import TokenContext from "../contexts/TokenContext";
 import Cadastro from "./Cadastro";
 import Login from "./Login";
 import Hoje from "./Hoje";
