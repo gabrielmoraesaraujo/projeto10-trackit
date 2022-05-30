@@ -6,9 +6,8 @@ import TokenContext from "../contexts/TokenContext";
 import Header from "./Header";
 import Footer from "./Footer";
 import vector from "../assets/img/Vector.png";
-import { useInsertionEffect } from "react/cjs/react.production.min";
 
-function AdicionaHabito({setadicionarHabito, salvaNovoHabito, set Habitos}){
+function AdicionaHabito({setAdicionarHabito, salvaNovoHabito, setHabitos}){
 
     const [dias, setDias] = useState([]);
     const [nomeHabito, setNomeHabito] = useState("");
@@ -69,24 +68,24 @@ function Habito({habitod, index, excluirHabito}){
     }
 
     return(
-        <habitosContainer>
+        <HabitoContainer>
             {habitod.name}
             <img src={vector} onClick={mandarExcluirHabito}/>
             {typeof habitod.days !=="undefined" ?
              <DiasSemana>
-                <DiaSemana cor={habitod.days.includes(0) ? "#CFCFCF" : "white"}>D</DiaSemana>
-                <DiaSemana cor={habitod.days.includes(1) ? "#CFCFCF" : "white"}>S</DiaSemana>
-                <DiaSemana cor={habitod.days.includes(2) ? "#CFCFCF" : "white"}>T</DiaSemana>
-                <DiaSemana cor={habitod.days.includes(3) ? "#CFCFCF" : "white"}>Q</DiaSemana>
-                <DiaSemana cor={habitod.days.includes(4) ? "#CFCFCF" : "white"}>Q</DiaSemana>
-                <DiaSemana cor={habitod.days.includes(5) ? "#CFCFCF" : "white"}>S</DiaSemana>
-                <DiaSemana cor={habitod.days.includes(6) ? "#CFCFCF" : "white"}>S</DiaSemana>
+                <DiaSemana cor={habitod.days.includes(0) ? "#CFCFCF" : "white"} texto={habitod.days.includes(0) ? "white" : "#CFCFCF"}>D</DiaSemana>
+                <DiaSemana texto={habitod.days.includes(1) ? "#white" : "CFCFCF"} cor={habitod.days.includes(1) ? "#CFCFCF" : "white"}>S</DiaSemana>
+                <DiaSemana texto={habitod.days.includes(2) ? "#white" : "CFCFCF"} cor={habitod.days.includes(2) ? "#CFCFCF" : "white"}>T</DiaSemana>
+                <DiaSemana texto={habitod.days.includes(3) ? "#white" : "CFCFCF"} cor={habitod.days.includes(3) ? "#CFCFCF" : "white"}>Q</DiaSemana>
+                <DiaSemana texto={habitod.days.includes(4) ? "#white" : "CFCFCF"} cor={habitod.days.includes(4) ? "#CFCFCF" : "white"}>Q</DiaSemana>
+                <DiaSemana texto={habitod.days.includes(5) ? "#white" : "CFCFCF"} cor={habitod.days.includes(5) ? "#CFCFCF" : "white"}>S</DiaSemana>
+                <DiaSemana texto={habitod.days.includes(6) ? "#white" : "CFCFCF"} cor={habitod.days.includes(6) ? "#CFCFCF" : "white"}>S</DiaSemana>
         
              </DiasSemana>
              :
              <></>
             }
-        </habitosContainer>
+        </HabitoContainer>
     );
 }
 
@@ -101,7 +100,7 @@ function ListaHabitos({habitos, setHabitos}){
         }
     }
 
-    useInsertionEffect(() => {
+    useEffect(() => {
 
         const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`, 
         config);
@@ -113,9 +112,8 @@ function ListaHabitos({habitos, setHabitos}){
     }, {});
 
     function excluirHabito(indexHabito){
-        const excluirHabito(indexHabito){
-            const excluirElemento = habitos[indexHabito];
-
+            const excluirElemento=habitos[indexHabito];
+            
             const promise = axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${excluirElemento.id}`, config);
 
             promise.then(resposta => {
@@ -178,7 +176,7 @@ function ListaHabitos({habitos, setHabitos}){
                     }
                 );
             }
-    }
+    
 
     return(
         <>
